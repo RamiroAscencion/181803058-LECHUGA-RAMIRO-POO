@@ -19,25 +19,27 @@
         <%
             int id = Integer.parseInt(request.getParameter("id_usuario"));
             String passactual = request.getParameter("pass1");
-            String nuevapass1 = request.getParameter("pass2");
-            String nuevapass2 = request.getParameter("pass3");
-            
             boolean value = false;
+            
             Connection conexion = null;
             PreparedStatement stmt = null;
             ResultSet rs = null;
+            
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 conexion = DriverManager.getConnection("jdbc:mysql://localhost/usuarios", "root", "");
-                stmt = conexion.prepareStatement("SELECT id_usuario from usuario WHERE MD5(?)=password AND id_usuario=?");
+                stmt = conexion.prepareStatement("SELECT * FROM usuario WHERE password=MD5(?) AND id_usuario=?");
 
-                stmt.setString(1, request.getParameter("pass1"));
-                stmt.setInt(2, Integer.parseInt(request.getParameter("id_usuario")));
+                stmt.setString(1, passactual);
+                stmt.setInt(2, id);
                 rs = stmt.executeQuery();
-
-                while (rs.next()) {
+                
+                if(rs.next() == true){
                     value = true;
                 }
+              
+                String nuevapass1 = request.getParameter("pass2");
+                String nuevapass2 = request.getParameter("pass3");
 
                 if (value == true) {
                     if (nuevapass1.equals(nuevapass2)) {
@@ -51,13 +53,18 @@
                                 <h3>Se ha actualizado la contraseña correctamente</h3>
                             </div>
                         <%
-                       }else{%>
+                    }else{%>
                             <br>
                             <div class="alert alert-danger" role="alert">
                                 <h3>No coinciden las contraseñas</h3>
                             </div>
-                        <%}
-                    }
+                  <%}
+                }else{%>
+                    <br>
+                    <div class="alert alert-danger" role="alert">
+                         <h3>Error de contraseña</h3>
+                    </div>
+                <%}
         }finally {
         %>
         <br>

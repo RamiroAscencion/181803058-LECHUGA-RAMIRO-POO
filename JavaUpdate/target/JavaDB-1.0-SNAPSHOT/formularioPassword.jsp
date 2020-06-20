@@ -21,7 +21,6 @@
         rs.next();
         rs.getString("password");
         password = rs.getString("password");
- 
     } catch (Exception e) {
         out.println(e.getMessage());
     }
@@ -39,12 +38,9 @@
             <h1>Modificar contraseña</h1>
             <form action="editarPassword.jsp" methode="POST" class="form" >
                 <div class="form-row">
-                  
                     <div class="col">
                         <input  type="hidden" class="form-control" name="id_usuario" value="<%=id%>"/>
                     </div>
-                 
-                   
                     <div class="col">
                         <input  type="text"  class="form-control" placeholder="Contraseña antigua" name="pass1" requiered/>
                     </div>
@@ -54,7 +50,6 @@
                     <div class="col">
                         <input  type="text"  class="form-control" placeholder="Nueva contraseña" name="pass3" requiered/>
                     </div>
-                  
                     <div class="col">
                         <input type="submit" class="btn btn-success btn-block" value="Enviar" />
                     </div>

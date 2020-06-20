@@ -52,7 +52,7 @@
                         <td><%=rs.getString("password")%></td>
                         <td><a class="btn btn-warning btn-block" href="formularioUsuario.jsp?id=<%=rs.getInt("id_usuario")%>"></a>Editar</td>
                         <td><a class="btn btn-secondary btn-block" href="formularioPassword.jsp?id=<%=rs.getInt("id_usuario")%>"></a>Editar password</td>
-                        <td><a class="btn btn-danger btn-block"  href="eliminarUsuario.jsp"></a>Eliminar</td>
+                        <td><a class="btn btn-danger btn-block"  href="eliminarUsuario.jsp?id=<%=rs.getInt("id_usuario")%>"></a>Eliminar</td>
                     </tr>
                     <% }%>
                 </tbody>
