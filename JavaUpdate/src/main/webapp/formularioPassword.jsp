@@ -42,13 +42,13 @@
                         <input  type="hidden" class="form-control" name="id_usuario" value="<%=id%>"/>
                     </div>
                     <div class="col">
-                        <input  type="text"  class="form-control" placeholder="Contraseña antigua" name="pass1" requiered/>
+                        <input  type="password"  class="form-control" placeholder="Contraseña antigua" name="pass1" requiered/>
                     </div>
                     <div class="col">
-                        <input  type="text" class="form-control" placeholder="Nueva contraseña" name="pass2" requiered/>
+                        <input  type="password" class="form-control" placeholder="Nueva contraseña" name="pass2" requiered/>
                     </div>
                     <div class="col">
-                        <input  type="text"  class="form-control" placeholder="Nueva contraseña" name="pass3" requiered/>
+                        <input  type="password"  class="form-control" placeholder="Nueva contraseña" name="pass3" requiered/>
                     </div>
                     <div class="col">
                         <input type="submit" class="btn btn-success btn-block" value="Enviar" />

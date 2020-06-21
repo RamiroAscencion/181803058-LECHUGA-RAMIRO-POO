@@ -41,6 +41,7 @@
                     <tr>
                         <th>#</th>
                         <th>Nombre</th>
+                        <th>Edad</th>
                         <th scope="col">Contraseña</th>
                     </tr>
                 </thead>
@@ -49,6 +50,7 @@
                     <tr>
                         <th><%=rs.getInt("id_usuario")%></th>
                         <td><%=rs.getString("usuario")%></td>
+                        <td><%=rs.getString("edad")%></td>
                         <td><%=rs.getString("password")%></td>
                         <td><a class="btn btn-warning btn-block" href="formularioUsuario.jsp?id=<%=rs.getInt("id_usuario")%>"></a>Editar</td>
                         <td><a class="btn btn-secondary btn-block" href="formularioPassword.jsp?id=<%=rs.getInt("id_usuario")%>"></a>Editar password</td>

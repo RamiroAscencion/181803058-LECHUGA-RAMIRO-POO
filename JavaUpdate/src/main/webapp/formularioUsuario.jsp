@@ -52,7 +52,9 @@
                     <div class="col">
                         <input  type="text" value="<%=usuario%>" class="form-control" placeholder="Nombre" name="usuario" requiered/>
                     </div>
-
+                     <div class="col">
+                        <input type="int" class="form-control" placeholder="Edad" name="edad"  requiered />
+                    </div>
                     <%if (id == 0) {%>
                     <div class="col">
                         <input type="password" class="form-control" placeholder="Contraseña" name="password"  requiered />

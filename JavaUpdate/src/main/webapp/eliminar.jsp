@@ -35,8 +35,6 @@
                 }
             }
         %>
-
-        <h1>Hello World!</h1>
         <div class="alert alert-success" role="alert">
             <h3>Se ha borrado el registro correctamente</h3>
             <div class="shadow-lg p-3 mb-5 bg-white rounded"><a class="btn btn-primary btn-block" href="index.jsp">Regresar</a></div>

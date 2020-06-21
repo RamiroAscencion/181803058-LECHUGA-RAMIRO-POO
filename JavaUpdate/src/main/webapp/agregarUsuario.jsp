@@ -15,9 +15,10 @@
         //Declarar el driver para la conexion a la base de datos
         Class.forName("com.mysql.jdbc.Driver");
         conexion = DriverManager.getConnection("jdbc:mysql://localhost/usuarios", "root", "");
-        stmt = conexion.prepareStatement("INSERT INTO usuario SET usuario=?, password=MD5(?)");
+        stmt = conexion.prepareStatement("INSERT INTO usuario SET usuario=?, edad=?, password=MD5(?)");
         stmt.setString(1, request.getParameter("usuario"));
-        stmt.setString(2, request.getParameter("password"));
+        stmt.setInt(2, Integer.parseInt(request.getParameter("edad")));
+        stmt.setString(3, request.getParameter("password"));
         if (stmt.executeUpdate() == 1) {
 %>
 <div class="alert alert-success" role="alert">
