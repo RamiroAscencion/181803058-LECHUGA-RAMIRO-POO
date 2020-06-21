@@ -20,12 +20,10 @@
         stmt.setString(2, request.getParameter("password"));
         if (stmt.executeUpdate() == 1) {
 %>
-<div>
-    <h3 style="text-align:center">
-        <font COLOR="teal">Se agrego exitosamente el registro en la base de datos</font>
-    </h3>
+<div class="alert alert-success" role="alert">
+    <h3>Se ha agregado el registro en la base de datos correctamente</h3>
 </div>
-<% 
+<%
     }
 %>
 
